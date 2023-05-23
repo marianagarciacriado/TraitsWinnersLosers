@@ -1,0 +1,219 @@
+"","Model number","Model name","Term","Estimate","Std. error","Lower 95% CI","Upper 95% CI"
+"1","116","Relative range gains - SLA values","b_Intercept",0.61,0.228,0.164,1.062
+"2","  ","  ","b_LogTraitMedianValue",-0.151,0.091,-0.332,0.027
+"3","  ","  ","sigma",0.206,0.03,0.157,0.274
+"4","117","Relative range losses - SLA values","b_Intercept",-0.226,0.241,-0.709,0.241
+"5","  ","  ","b_LogTraitMedianValue",-0.002,0.097,-0.191,0.19
+"6","  ","  ","sigma",0.2,0.031,0.151,0.272
+"7","118","Relative range gains - Seed Mass values","b_Intercept",0.172,0.078,0.018,0.325
+"8","  ","  ","b_LogTraitMedianValue",-0.018,0.024,-0.066,0.029
+"9","  ","  ","sigma",0.243,0.058,0.159,0.386
+"10","119","Relative range losses - Seed Mass values","b_Intercept",-0.252,0.081,-0.41,-0.084
+"11","  ","  ","b_LogTraitMedianValue",-0.026,0.04,-0.107,0.055
+"12","  ","  ","sigma",0.196,0.043,0.134,0.3
+"13","120","Relative range gains - Height values","b_Intercept",0.195,0.071,0.059,0.34
+"14","  ","  ","b_LogTraitMedianValue",-0.017,0.031,-0.075,0.043
+"15","  ","  ","sigma",0.216,0.034,0.161,0.296
+"16","121","Relative range losses - Height values","b_Intercept",-0.426,0.104,-0.629,-0.216
+"17","  ","  ","b_LogTraitMedianValue",-0.073,0.039,-0.151,0.005
+"18","  ","  ","sigma",0.205,0.033,0.152,0.278
+"19","122","Median relative range gains - all traits values","b_Intercept",0.35,0.492,-0.639,1.313
+"20","  ","  ","b_Hei_val",0.014,0.047,-0.079,0.107
+"21","  ","  ","b_Seed_val",-0.014,0.026,-0.065,0.036
+"22","  ","  ","b_SLA_val",-0.063,0.181,-0.416,0.297
+"23","  ","  ","sigma",0.241,0.057,0.159,0.377
+"24","123","Median relative range gains - all traits values interaction","b_Intercept",1.467,1.263,-0.989,4.077
+"25","  ","  ","b_Hei_val",0.596,0.49,-0.367,1.608
+"26","  ","  ","b_Seed_val",-0.105,0.241,-0.572,0.388
+"27","  ","  ","b_SLA_val",-0.465,0.48,-1.461,0.451
+"28","  ","  ","b_Hei_val:Seed_val",0.024,0.051,-0.076,0.129
+"29","  ","  ","b_Seed_val:SLA_val",0.079,0.085,-0.093,0.243
+"30","  ","  ","b_Hei_val:SLA_val",-0.225,0.191,-0.618,0.153
+"31","  ","  ","sigma",0.246,0.071,0.151,0.431
+"32","124","Median relative range losses - all traits values","b_Intercept",-0.469,0.346,-1.154,0.218
+"33","  ","  ","b_Hei_val",-0.023,0.056,-0.128,0.089
+"34","  ","  ","b_Seed_val",-0.018,0.043,-0.101,0.066
+"35","  ","  ","b_SLA_val",0.07,0.138,-0.204,0.347
+"36","  ","  ","sigma",0.208,0.046,0.14,0.32
+"37","125","Median relative range losses - all traits values interaction","b_Intercept",-4.442,1.897,-8.348,-0.715
+"38","  ","  ","b_Hei_val",-1.769,0.848,-3.503,-0.123
+"39","  ","  ","b_Seed_val",0.182,0.236,-0.282,0.651
+"40","  ","  ","b_SLA_val",1.555,0.742,0.053,3.07
+"41","  ","  ","b_Hei_val:Seed_val",-0.096,0.102,-0.3,0.104
+"42","  ","  ","b_Seed_val:SLA_val",-0.164,0.119,-0.404,0.071
+"43","  ","  ","b_Hei_val:SLA_val",0.641,0.3,0.062,1.27
+"44","  ","  ","sigma",0.192,0.046,0.124,0.302
+"45","126","Absolute range changes - functional group","b_Intercept",-0.065,0.065,-0.193,0.063
+"46","  ","  ","b_gfLowshrub",0.11,0.156,-0.2,0.417
+"47","  ","  ","b_gfTallshrub",0.045,0.089,-0.128,0.221
+"48","  ","  ","sigma",0.244,0.033,0.19,0.317
+"49","127","Absolute range changes - dispersal","b_Intercept",-0.002,0.076,-0.153,0.146
+"50","  ","  ","b_DispersalModeWind",-0.046,0.091,-0.223,0.137
+"51","  ","  ","sigma",0.24,0.032,0.188,0.313
+"52","128","Absolute range changes - decidiousness","b_Intercept",-0.029,0.05,-0.128,0.069
+"53","  ","  ","b_LeafPhenologyEvergreen",-0.014,0.093,-0.2,0.169
+"54","  ","  ","sigma",0.242,0.032,0.188,0.312
+"55","129","Absolute range changes - family","b_Intercept",-0.154,0.141,-0.43,0.124
+"56","  ","  ","b_FamilyEmpetraceae",0.181,0.285,-0.379,0.731
+"57","  ","  ","b_FamilyEricaceae",0.204,0.16,-0.111,0.521
+"58","  ","  ","b_FamilyLamiaceae",-0.051,0.283,-0.615,0.5
+"59","  ","  ","b_FamilyRosaceae",0.118,0.187,-0.242,0.49
+"60","  ","  ","b_FamilySalicaceae",0.097,0.154,-0.209,0.394
+"61","  ","  ","sigma",0.247,0.035,0.191,0.328
+"62","130","Relative range changes - functional group","b_Intercept",-0.077,0.073,-0.224,0.065
+"63","  ","  ","b_gfLowshrub",0.074,0.177,-0.267,0.426
+"64","  ","  ","b_gfTallshrub",0.053,0.099,-0.139,0.253
+"65","  ","  ","sigma",0.274,0.037,0.213,0.359
+"66","131","Relative range changes - dispersal","b_Intercept",0.036,0.083,-0.131,0.198
+"67","  ","  ","b_DispersalModeWind",-0.112,0.099,-0.308,0.086
+"68","  ","  ","sigma",0.265,0.036,0.207,0.347
+"69","132","Relative range changes - decidiousness","b_Intercept",-0.041,0.056,-0.15,0.068
+"70","  ","  ","b_LeafPhenologyEvergreen",-0.014,0.103,-0.214,0.192
+"71","  ","  ","sigma",0.271,0.035,0.214,0.345
+"72","133","Relative range changes - family","b_Intercept",-0.161,0.155,-0.462,0.141
+"73","  ","  ","b_FamilyEmpetraceae",0.168,0.308,-0.439,0.78
+"74","  ","  ","b_FamilyEricaceae",0.25,0.177,-0.093,0.61
+"75","  ","  ","b_FamilyLamiaceae",-0.295,0.304,-0.892,0.303
+"76","  ","  ","b_FamilyRosaceae",0.105,0.205,-0.293,0.511
+"77","  ","  ","b_FamilySalicaceae",0.077,0.169,-0.254,0.413
+"78","  ","  ","sigma",0.262,0.037,0.201,0.345
+"79","134","Cover change slopes - SLA variation","b_Intercept",0.014,0.081,-0.147,0.173
+"80","  ","  ","b_LogTraitValueSD",-0.206,0.288,-0.757,0.361
+"81","  ","  ","sigma",0.215,0.029,0.168,0.283
+"82","135","Cover change slopes - Seed Mass variation","b_Intercept",-0.069,0.077,-0.224,0.084
+"83","  ","  ","b_LogTraitValueSD",0.018,0.06,-0.101,0.133
+"84","  ","  ","sigma",0.262,0.044,0.192,0.363
+"85","136","Cover change slopes - Height variation","b_Intercept",-0.207,0.134,-0.468,0.065
+"86","  ","  ","b_LogTraitValueSD",0.28,0.211,-0.146,0.692
+"87","  ","  ","sigma",0.21,0.028,0.165,0.272
+"88","137","Cover change slopes - all traits variation","b_Intercept",-0.244,0.219,-0.688,0.178
+"89","  ","  ","b_Hei_var",0.398,0.289,-0.153,0.968
+"90","  ","  ","b_Seed_var",0.074,0.069,-0.066,0.21
+"91","  ","  ","b_SLA_var",-0.423,0.477,-1.355,0.529
+"92","  ","  ","sigma",0.238,0.038,0.178,0.325
+"93","138","Cover change slopes - SLA values","b_Intercept",0.019,0.089,-0.159,0.192
+"94","  ","  ","b_LogTraitMedianValue",0.022,0.032,-0.041,0.086
+"95","  ","  ","sigma",0.214,0.028,0.168,0.278
+"96","139","Cover change slopes - Seed Mass values","b_Intercept",-0.078,0.067,-0.211,0.054
+"97","  ","  ","b_LogTraitMedianValue",-0.014,0.024,-0.061,0.034
+"98","  ","  ","sigma",0.26,0.042,0.191,0.355
+"99","140","Cover change slopes - Height values","b_Intercept",0.02,0.089,-0.16,0.192
+"100","  ","  ","b_LogTraitMedianValue",0.023,0.032,-0.041,0.086
+"101","  ","  ","sigma",0.214,0.027,0.169,0.277
+"102","141","Cover change slopes - all traits values","b_Intercept",-0.205,0.368,-0.935,0.52
+"103","  ","  ","b_Hei_val",0.022,0.045,-0.069,0.111
+"104","  ","  ","b_SeedMass_val",-0.016,0.022,-0.06,0.028
+"105","  ","  ","b_SLA_val",0.081,0.137,-0.191,0.356
+"106","  ","  ","sigma",0.25,0.041,0.186,0.347
+"107","142","Current range - PC1+PC2 values","b_Intercept",0.028,0.139,-0.246,0.304
+"108","  ","  ","b_PC1",-0.014,0.121,-0.252,0.228
+"109","  ","  ","b_PC2",0.101,0.145,-0.179,0.385
+"110","  ","  ","sigma",0.877,0.106,0.698,1.115
+"111","143","Current range - PC1 values","b_Intercept",0.025,0.139,-0.251,0.297
+"112","  ","  ","b_PC1",-0.017,0.125,-0.264,0.231
+"113","  ","  ","sigma",0.873,0.105,0.699,1.11
+"114","144","Absolute range change - PC1+PC2 values","b_Intercept",-0.033,0.047,-0.127,0.061
+"115","  ","  ","b_PC1",-0.002,0.042,-0.085,0.08
+"116","  ","  ","b_PC2",-0.089,0.05,-0.187,0.011
+"117","  ","  ","sigma",0.297,0.036,0.238,0.377
+"118","145","Absolute range change - PC1 values","b_Intercept",-0.033,0.049,-0.128,0.065
+"119","  ","  ","b_PC1",-0.002,0.043,-0.087,0.082
+"120","  ","  ","sigma",0.307,0.037,0.245,0.386
+"121","146","Relative range change - PC1+PC2 values","b_Intercept",-0.023,0.046,-0.114,0.069
+"122","  ","  ","b_PC1",0.022,0.041,-0.059,0.101
+"123","  ","  ","b_PC2",-0.069,0.049,-0.165,0.029
+"124","  ","  ","sigma",0.292,0.036,0.232,0.371
+"125","147","Relative range change - PC1 values","b_Intercept",-0.023,0.047,-0.118,0.067
+"126","  ","  ","b_PC1",0.022,0.042,-0.06,0.106
+"127","  ","  ","sigma",0.296,0.035,0.237,0.373
+"128","148","PC1 values - Category","b_Intercept",-0.311,0.274,-0.851,0.241
+"129","  ","  ","b_category.absNochange",0.059,0.503,-0.94,1.041
+"130","  ","  ","b_category.absWinner",0.754,0.394,-0.041,1.52
+"131","  ","  ","sigma",1.147,0.137,0.915,1.443
+"132","149","PC2 values - Category","b_Intercept",0.334,0.236,-0.134,0.802
+"133","  ","  ","b_category.absNochange",-0.444,0.433,-1.302,0.409
+"134","  ","  ","b_category.absWinner",-0.645,0.334,-1.32,0.007
+"135","  ","  ","sigma",0.966,0.118,0.769,1.229
+"136","150","Current range - PC1+PC2 variation","b_Intercept",0.025,0.139,-0.239,0.301
+"137","  ","  ","b_PC1",0.006,0.117,-0.218,0.238
+"138","  ","  ","b_PC2",-0.009,0.148,-0.301,0.282
+"139","  ","  ","sigma",0.884,0.106,0.705,1.115
+"140","151","Current range - PC1 variation","b_Intercept",0.027,0.14,-0.252,0.298
+"141","  ","  ","b_PC1",0.006,0.117,-0.222,0.237
+"142","  ","  ","sigma",0.872,0.102,0.699,1.094
+"143","152","Absolute range change - PC1+PC2 variation","b_Intercept",-0.032,0.049,-0.129,0.063
+"144","  ","  ","b_PC1",0.063,0.039,-0.015,0.14
+"145","  ","  ","b_PC2",-0.017,0.049,-0.115,0.079
+"146","  ","  ","sigma",0.299,0.036,0.237,0.38
+"147","153","Absolute range change - PC1 variation","b_Intercept",-0.033,0.047,-0.127,0.061
+"148","  ","  ","b_PC1",0.064,0.039,-0.011,0.14
+"149","  ","  ","sigma",0.296,0.036,0.235,0.377
+"150","154","Relative range change - PC1+PC2 variation","b_Intercept",-0.024,0.046,-0.116,0.066
+"151","  ","  ","b_PC1",0.05,0.038,-0.025,0.126
+"152","  ","  ","b_PC2",-0.065,0.047,-0.154,0.026
+"153","  ","  ","sigma",0.286,0.035,0.228,0.363
+"154","155","Relative range change - PC1 variation","b_Intercept",-0.024,0.046,-0.115,0.066
+"155","  ","  ","b_PC1",0.05,0.039,-0.025,0.126
+"156","  ","  ","sigma",0.29,0.035,0.231,0.369
+"157","156","PC1 variation - Category","b_Intercept",-0.167,0.312,-0.776,0.45
+"158","  ","  ","b_category.absNochange",0.316,0.582,-0.823,1.459
+"159","  ","  ","b_category.absWinner",0.276,0.449,-0.598,1.173
+"160","  ","  ","sigma",1.284,0.156,1.022,1.636
+"161","157","PC2 variation - Category","b_Intercept",0.139,0.252,-0.356,0.632
+"162","  ","  ","b_category.absNochange",-0.398,0.472,-1.331,0.533
+"163","  ","  ","b_category.absWinner",-0.182,0.366,-0.906,0.513
+"164","  ","  ","sigma",1.034,0.127,0.823,1.315
+"165","158","Cover change - PC1+PC2 values","b_Intercept",-0.034,0.043,-0.119,0.051
+"166","  ","  ","b_PC1",0.015,0.04,-0.065,0.095
+"167","  ","  ","b_PC2",-0.043,0.044,-0.13,0.045
+"168","  ","  ","sigma",0.234,0.034,0.179,0.311
+"169","159","PC1 values - Cover Category","b_Intercept",-0.411,0.456,-1.324,0.486
+"170","  ","  ","b_CoverCategory.xNochange",0.474,0.557,-0.6,1.588
+"171","  ","  ","b_CoverCategory.xWinner",0.617,0.607,-0.553,1.827
+"172","  ","  ","sigma",1.185,0.175,0.902,1.588
+"173","160","PC2 values - Cover Category","b_Intercept",-0.263,0.393,-1.041,0.5
+"174","  ","  ","b_CoverCategory.xNochange",0.517,0.481,-0.43,1.454
+"175","  ","  ","b_CoverCategory.xWinner",0.077,0.524,-0.945,1.095
+"176","  ","  ","sigma",1.041,0.15,0.804,1.374
+"177","161","Cover change - PC1+PC2 variation","b_Intercept",-0.033,0.043,-0.117,0.049
+"178","  ","  ","b_PC1",-0.02,0.034,-0.086,0.047
+"179","  ","  ","b_PC2",-0.059,0.045,-0.147,0.032
+"180","  ","  ","sigma",0.23,0.033,0.175,0.304
+"181","162","PC1 variation - Cover Category","b_Intercept",0.722,0.507,-0.258,1.71
+"182","  ","  ","b_CoverCategory.xNochange",-0.962,0.616,-2.194,0.247
+"183","  ","  ","b_CoverCategory.xWinner",-0.914,0.666,-2.229,0.392
+"184","  ","  ","sigma",1.34,0.193,1.029,1.771
+"185","163","PC2 variation - Cover Category","b_Intercept",0.161,0.387,-0.623,0.907
+"186","  ","  ","b_CoverCategory.xNochange",-0.149,0.478,-1.09,0.802
+"187","  ","  ","b_CoverCategory.xWinner",-0.306,0.522,-1.337,0.747
+"188","  ","  ","sigma",1.014,0.147,0.772,1.345
+"189","164","Median absolute range shift - Seed variation LimDisp","b_Intercept",-0.055,0.076,-0.204,0.093
+"190","  ","  ","b_LogTraitMedianValue",-0.019,0.028,-0.076,0.037
+"191","  ","  ","sigma",0.332,0.05,0.252,0.449
+"192","165","Median absolute range shift - Seed variation UnlimDisp","b_Intercept",-0.092,0.103,-0.297,0.111
+"193","  ","  ","b_LogTraitMedianValue",-0.017,0.04,-0.094,0.062
+"194","  ","  ","sigma",0.462,0.067,0.353,0.611
+"195","166","Median absolute range shift - Height variation LimDisp","b_Intercept",0.095,0.079,-0.06,0.248
+"196","  ","  ","b_LogTraitMedianValue",0.041,0.033,-0.026,0.105
+"197","  ","  ","sigma",0.309,0.031,0.255,0.376
+"198","167","Median absolute range shift - Height variation UnlimDisp","b_Intercept",0.084,0.114,-0.142,0.302
+"199","  ","  ","b_LogTraitMedianValue",0.03,0.047,-0.063,0.12
+"200","  ","  ","sigma",0.445,0.045,0.367,0.54
+"201","168","Median absolute range shift - Height values UnlimDispWeight","b_Intercept",0.058,0.125,-0.193,0.303
+"202","  ","  ","b_LogTraitMedianValue",0.018,0.051,-0.083,0.117
+"203","  ","  ","sigma",0.454,0.049,0.371,0.561
+"204","169","Median absolute range shift - SLA values UnlimDispWeight","b_Intercept",0.131,0.35,-0.543,0.837
+"205","  ","  ","b_LogTraitMedianValue",-0.055,0.14,-0.335,0.217
+"206","  ","  ","sigma",0.438,0.043,0.363,0.531
+"207","170","Median absolute range shift - SeedMass values UnlimDispWeight","b_Intercept",-0.053,0.105,-0.263,0.155
+"208","  ","  ","b_LogTraitMedianValue",-0.021,0.041,-0.103,0.059
+"209","  ","  ","sigma",0.46,0.067,0.351,0.611
+"210","171","Median absolute range shift - Height variation UnlimDispWeight","b_Intercept",-0.079,0.201,-0.473,0.319
+"211","  ","  ","b_LogTraitValueSD",0.175,0.332,-0.473,0.824
+"212","  ","  ","sigma",0.452,0.047,0.372,0.555
+"213","172","Median absolute range shift - SLA variation UnlimDispWeight","b_Intercept",-0.01,0.13,-0.265,0.243
+"214","  ","  ","b_LogTraitValueSD",0.031,0.427,-0.81,0.858
+"215","  ","  ","sigma",0.438,0.044,0.361,0.535
+"216","173","Median absolute range shift - SeedMass variation UnlimDispWeight","b_Intercept",-0.125,0.114,-0.347,0.097
+"217","  ","  ","b_LogTraitValueSD",0.123,0.088,-0.049,0.293
+"218","  ","  ","sigma",0.444,0.064,0.343,0.585

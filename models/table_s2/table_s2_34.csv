@@ -1,0 +1,141 @@
+"","Model number","Model name","Term","Estimate","Std. error","Lower 95% CI","Upper 95% CI"
+"1","1","Current ranges - SLA variation","b_Intercept",0.145,0.256,-0.368,0.654
+"2","  ","  ","b_LogTraitValueSD",-0.115,0.836,-1.766,1.513
+"3","  ","  ","sigma",0.86,0.086,0.713,1.049
+"4","2","Current ranges - Seed variation Berry Sp","b_Intercept",0.611,0.521,-0.425,1.654
+"5","  ","  ","b_LogTraitValueSD",-0.091,0.533,-1.134,0.997
+"6","  ","  ","sigma",1.123,0.395,0.634,2.114
+"7","3","Current ranges - Seed variation Wind Sp","b_Intercept",-0.127,0.235,-0.583,0.342
+"8","  ","  ","b_LogTraitValueSD",0.067,0.174,-0.288,0.408
+"9","  ","  ","sigma",0.746,0.131,0.539,1.061
+"10","4","Current ranges - Seed variation No Gapfilled","b_Intercept",0.301,0.177,-0.062,0.642
+"11","  ","  ","b_LogTraitValueSD",-0.013,0.134,-0.277,0.256
+"12","  ","  ","sigma",0.654,0.111,0.478,0.916
+"13","5","Current ranges - Seed Mass variation","b_Intercept",0.134,0.213,-0.28,0.562
+"14","  ","  ","b_LogTraitValueSD",-0.023,0.169,-0.347,0.31
+"15","  ","  ","sigma",0.832,0.12,0.633,1.102
+"16","6","Current ranges - Height variation","b_Intercept",-0.335,0.383,-1.089,0.441
+"17","  ","  ","b_LogTraitValueSD",0.703,0.635,-0.545,1.962
+"18","  ","  ","sigma",0.856,0.09,0.702,1.047
+"19","7","Current ranges - all traits variation","b_Intercept",0.076,0.615,-1.134,1.279
+"20","  ","  ","b_Hei_var",-0.047,0.853,-1.725,1.616
+"21","  ","  ","b_Seed_var",-0.061,0.193,-0.436,0.324
+"22","  ","  ","b_SLA_var",0.336,1.21,-2.082,2.718
+"23","  ","  ","sigma",0.863,0.115,0.669,1.124
+"24","8","Current ranges - all traits variation interaction","b_Intercept",-0.268,1.733,-3.661,3.107
+"25","  ","  ","b_Hei_var",1.191,2.829,-4.23,6.853
+"26","  ","  ","b_Seed_var",-1.754,1.479,-4.669,1.225
+"27","  ","  ","b_SLA_var",8.073,6.757,-5.33,21.142
+"28","  ","  ","b_Hei_var:Seed_var",2.314,2.263,-2.155,6.749
+"29","  ","  ","b_Hei_var:SLA_var",-14.716,11.197,-36.482,7.058
+"30","  ","  ","b_Seed_var:SLA_var",0.677,0.981,-1.259,2.62
+"31","  ","  ","sigma",0.858,0.121,0.663,1.132
+"32","9","Current ranges - SLA values","b_Intercept",0.362,0.693,-0.994,1.745
+"33","  ","  ","b_LogTraitMedianValue",-0.102,0.28,-0.667,0.458
+"34","  ","  ","sigma",0.862,0.088,0.71,1.054
+"35","10","Current ranges - Seed values No Gapfilled","b_Intercept",0.38,0.154,0.072,0.681
+"36","  ","  ","b_LogTraitMedianValue",0.058,0.054,-0.049,0.164
+"37","  ","  ","sigma",0.633,0.105,0.466,0.88
+"38","11","Current ranges - Seed values Berry Sp","b_Intercept",0.571,0.405,-0.249,1.399
+"39","  ","  ","b_LogTraitMedianValue",0.008,0.303,-0.604,0.614
+"40","  ","  ","sigma",1.119,0.374,0.63,2.087
+"41","12","Current ranges - Seed values Wind Sp","b_Intercept",-0.066,0.234,-0.541,0.405
+"42","  ","  ","b_LogTraitMedianValue",0,0.078,-0.158,0.153
+"43","  ","  ","sigma",0.751,0.136,0.54,1.078
+"44","13","Current ranges - Seed Mass values","b_Intercept",0.205,0.189,-0.167,0.58
+"45","  ","  ","b_LogTraitMedianValue",0.057,0.071,-0.083,0.197
+"46","  ","  ","sigma",0.821,0.12,0.63,1.094
+"47","14","Current ranges - Height values","b_Intercept",-0.007,0.239,-0.479,0.461
+"48","  ","  ","b_LogTraitMedianValue",-0.036,0.098,-0.222,0.156
+"49","  ","  ","sigma",0.867,0.093,0.709,1.076
+"50","15","Current ranges - all traits values","b_Intercept",0.915,1.082,-1.236,3.042
+"51","  ","  ","b_SLA_val",-0.359,0.41,-1.163,0.436
+"52","  ","  ","b_Hei_val",-0.066,0.122,-0.306,0.175
+"53","  ","  ","b_SeedMass_val",0.086,0.076,-0.064,0.238
+"54","  ","  ","sigma",0.838,0.112,0.656,1.088
+"55","16","Current ranges - all traits values interaction","b_Intercept",-0.859,2.95,-6.558,4.979
+"56","  ","  ","b_SLA_val",0.388,1.131,-1.845,2.566
+"57","  ","  ","b_Hei_val",-0.543,1.18,-2.818,1.795
+"58","  ","  ","b_SeedMass_val",-0.577,0.489,-1.533,0.391
+"59","  ","  ","b_SLA_val:Hei_val",0.171,0.446,-0.72,1.023
+"60","  ","  ","b_SLA_val:SeedMass_val",0.287,0.201,-0.109,0.684
+"61","  ","  ","b_Hei_val:SeedMass_val",-0.053,0.121,-0.29,0.184
+"62","  ","  ","sigma",0.843,0.124,0.643,1.124
+"63","17","Height/SLA correlation","b_Intercept",2.492,0.112,2.268,2.713
+"64","  ","  ","b_Hei_val",0.029,0.046,-0.061,0.12
+"65","  ","  ","sigma",0.327,0.043,0.257,0.424
+"66","18","Height/Seed Mass correlation","b_Intercept",-1.09,0.627,-2.32,0.146
+"67","  ","  ","b_Hei_val",0.156,0.249,-0.329,0.641
+"68","  ","  ","sigma",1.97,0.231,1.568,2.476
+"69","19","Seed Mass/SLA correlation","b_Intercept",-4.323,2.094,-8.427,-0.217
+"70","  ","  ","b_SLA_val",1.207,0.864,-0.492,2.889
+"71","  ","  ","sigma",1.927,0.227,1.539,2.438
+"72","20","SLA variation - category","b_Intercept",0.258,0.031,0.197,0.319
+"73","  ","  ","b_category.absNochange",0.027,0.061,-0.091,0.144
+"74","  ","  ","b_category.absWinner",0.024,0.043,-0.059,0.109
+"75","  ","  ","sigma",0.146,0.015,0.121,0.179
+"76","21","Seed Mass variation - category","b_Intercept",0.657,0.28,0.107,1.219
+"77","  ","  ","b_category.absNochange",0.025,0.507,-0.97,1.033
+"78","  ","  ","b_category.absWinner",0.501,0.413,-0.318,1.313
+"79","  ","  ","sigma",0.993,0.144,0.754,1.313
+"80","22","Height variation - category","b_Intercept",0.54,0.043,0.454,0.627
+"81","  ","  ","b_category.absNochange",0.028,0.087,-0.143,0.199
+"82","  ","  ","b_category.absWinner",0.068,0.062,-0.054,0.19
+"83","  ","  ","sigma",0.2,0.021,0.163,0.246
+"84","23","SLA values - category","b_Intercept",2.45,0.091,2.273,2.629
+"85","  ","  ","b_category.absNochange",-0.138,0.177,-0.488,0.199
+"86","  ","  ","b_category.absWinner",0.048,0.126,-0.2,0.294
+"87","  ","  ","sigma",0.436,0.044,0.359,0.534
+"88","24","Seed Mass values - category","b_Intercept",-1.575,0.658,-2.872,-0.257
+"89","  ","  ","b_category.absNochange",0.004,1.197,-2.373,2.328
+"90","  ","  ","b_category.absWinner",0.12,0.982,-1.866,2.088
+"91","  ","  ","sigma",2.336,0.333,1.794,3.096
+"92","25","Height values - category","b_Intercept",-2.487,0.28,-3.042,-1.938
+"93","  ","  ","b_category.absNochange",0.539,0.549,-0.548,1.613
+"94","  ","  ","b_category.absWinner",0.689,0.403,-0.094,1.479
+"95","  ","  ","sigma",1.301,0.137,1.067,1.608
+"96","26","Current ranges - functional group","b_Intercept",0.054,0.224,-0.387,0.493
+"97","  ","  ","b_gfLowshrub",0.041,0.38,-0.705,0.775
+"98","  ","  ","b_gfTallshrub",-0.109,0.279,-0.656,0.446
+"99","  ","  ","sigma",0.946,0.089,0.791,1.134
+"100","27","Current ranges - dispersal","b_Intercept",0.39,0.228,-0.049,0.843
+"101","  ","  ","b_DispersalModeWind",-0.531,0.262,-1.037,-0.02
+"102","  ","  ","sigma",0.906,0.085,0.757,1.091
+"103","28","Current ranges - decidiousness","b_Intercept",-0.08,0.147,-0.371,0.207
+"104","  ","  ","b_LeafPhenologyEvergreen",0.229,0.244,-0.258,0.701
+"105","  ","  ","sigma",0.933,0.087,0.781,1.123
+"106","29","Current ranges - family","b_Intercept",-0.385,0.521,-1.406,0.659
+"107","  ","  ","b_FamilyBetulaceae",0.57,0.733,-0.866,2.002
+"108","  ","  ","b_FamilyCaprifoliaceae",1.383,1.053,-0.629,3.481
+"109","  ","  ","b_FamilyCornaceae",0.454,0.83,-1.199,2.112
+"110","  ","  ","b_FamilyDiapensiaceae",0.691,1.025,-1.343,2.73
+"111","  ","  ","b_FamilyEmpetraceae",1.446,1.037,-0.599,3.469
+"112","  ","  ","b_FamilyEricaceae",0.471,0.564,-0.657,1.585
+"113","  ","  ","b_FamilyGrossulariaceae",0.846,0.736,-0.647,2.3
+"114","  ","  ","b_FamilyLamiaceae",-0.768,0.827,-2.399,0.852
+"115","  ","  ","b_FamilyMyricaceae",0.376,1.034,-1.641,2.372
+"116","  ","  ","b_FamilyRosaceae",1.044,0.616,-0.183,2.253
+"117","  ","  ","b_FamilySalicaceae",-0.053,0.56,-1.196,1.041
+"118","  ","  ","sigma",0.894,0.095,0.737,1.101
+"119","30","Binomial - category - all traits variation","b_Intercept",-1.159,1.621,-4.398,1.916
+"120","  ","  ","b_SLA_var",-2.761,3.588,-10.042,4.144
+"121","  ","  ","b_Hei_var",0.951,2.231,-3.364,5.35
+"122","  ","  ","b_Seed_var",0.961,0.572,-0.099,2.156
+"123","31","Binomial - category - all traits values","b_Intercept",-3.659,3.405,-10.875,2.56
+"124","  ","  ","b_SLA_val",1.924,1.317,-0.475,4.731
+"125","  ","  ","b_Hei_val",0.705,0.36,0.028,1.46
+"126","  ","  ","b_SeedMass_val",-0.021,0.257,-0.501,0.52
+"127","32","Binomial - cover category - all traits variation","b_Intercept",-2.717,2.392,-7.645,1.835
+"128","  ","  ","b_SLA_var",5.987,5.253,-3.88,16.749
+"129","  ","  ","b_Hei_var",2.133,2.98,-3.733,7.996
+"130","  ","  ","b_Seed_var",-1.348,0.893,-3.293,0.231
+"131","33","Binomial - cover category - all traits values","b_Intercept",-1.893,3.75,-9.753,5.131
+"132","  ","  ","b_SLA_val",0.702,1.426,-1.948,3.661
+"133","  ","  ","b_Hei_val",0.258,0.408,-0.537,1.08
+"134","  ","  ","b_SeedMass_val",0.065,0.268,-0.43,0.636
+"135","34","Absolute vs relative range change","b_Intercept",432549.627,354105.231,-274451.922,1127821.905
+"136","  ","  ","b_rel.median",55658.026,5204.675,45319.415,65975.124
+"137","  ","  ","sigma",2749951.571,258554.503,2298425.246,3306917.333
+"138","35","Future vs current ranges","b_Intercept",-55567.875,1128307.12,-2271837.088,2216328.011
+"139","  ","  ","b_CurrentRangeSize",118.387,12.985,91.729,143.463
+"140","  ","  ","sigma",4759577.136,443513.916,3999205.21,5728324.404
