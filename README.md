@@ -10,13 +10,13 @@ Mariana García Criado, Isla H. Myers-Smith, Anne D. Bjorkman, Signe Normand, An
 Contact: Mariana García Criado, mariana.garcia.criado@gmail.com
 
 ## Data use guidelines
-(this needs updating) Data are publicly available using a Creative Commons Attribution 4.0 International copyright (CC BY 4.0; see license.txt). Data are fully public but should be appropriately referenced by citing the paper. Although not mandatory, we additionally suggest that data users contact and collaborate with data contributors if this dataset will contribute a substantial proportion of observations used in a particular paper or analysis. DOI for this dataset is 10.5281/zenodo.3601454
+(this needs updating) Data are publicly available using a Creative Commons Attribution 4.0 International copyright (CC BY 4.0; see license.txt). Data are fully public but should be appropriately referenced by citing the paper. Although not mandatory, we additionally suggest that data users contact and collaborate with data contributors if this dataset will contribute a substantial proportion of observations used in a particular paper or analysis. DOI for this dataset is xxx
 
 ## Data availability & access
 The data and code for this manuscript will be mantained at this GitHub repository (https://github.com/marianagarciacriado/TraitsWinnersLosers). 
 
 ## Citation
-(this needs updating)
+(needs updating)
 
 ## Data
 Trait data are available at https://www.try-db.org/TryWeb/Home.php (TRY) and https://tundratraitteam.github.io/ (TTT). Cover change over time data will be published at https://github.com/annebj/ITEX30_VegComp. A previous version of this dataset can be accessed at http://polardata.ca/, CCIN Reference Number 10786. Species range data are available as a summarised dataset, together with the rest of input data necessary to reproduce figures and analyses, in the `data` folder.
@@ -25,7 +25,7 @@ Scripts 0_cover_change_over_time and 0_TRY_TTT_cleaning are included in this rep
 
 ## Scripts
 All the analyses undertaken for this manuscript are split between multiple R scripts within the `scripts`folder.
-They can be followed in a sequential order (i.e., 01 to 12), with both 0_ scripts showing the process of generating summarised input files.
+They can be followed in a sequential order (i.e., 1 to 8), with both 0_ scripts showing the process of generating summarised input files.
 
 ## Figures
 The figures generated in R are stored in the `figures` folder.
