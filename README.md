@@ -9,7 +9,7 @@ Mariana García Criado, Isla H. Myers-Smith, Anne D. Bjorkman, Signe Normand, An
 Contact: Mariana García Criado, mariana.garcia.criado@gmail.com
 
 ## Data use guidelines
-Data output from this manuscript are publicly available using a Creative Commons Attribution 4.0 International copyright (CC BY 4.0; see license.txt). Data are fully public but should be appropriately referenced by citing the paper. Although not mandatory, we additionally suggest that data users contact and collaborate with data contributors if this dataset will contribute a substantial proportion of observations used in a particular paper or analysis. DOI for this dataset is xxx
+Data output from this manuscript are publicly available using a Creative Commons Attribution 4.0 International copyright (CC BY 4.0; see license.txt). Data are fully public but should be appropriately referenced by citing the paper. Although not mandatory, we additionally suggest that data users contact and collaborate with data contributors if this dataset will contribute a substantial proportion of observations used in a particular paper or analysis. DOI for this dataset is 10.5281/zenodo.7970294 and can also be found at https://zenodo.org/record/7970294.
 
 ## Data availability & access
 The data and code for this manuscript will be mantained at this GitHub repository (https://github.com/marianagarciacriado/TraitsWinnersLosers). 
