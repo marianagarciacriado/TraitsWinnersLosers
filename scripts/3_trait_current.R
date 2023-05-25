@@ -50,8 +50,8 @@ trait.cat <- trait.cat0 %>% mutate(GenShortName = str_sub(GenShort, start = 1, e
 # save for script#4
 save(trait.cat, file = "data/2022_trait_cat.RData")
 
-# We have tons of records in the main master because each row has an individual trait value
-# For this analysis, we need only line per species (e.g. a single value of species' trait variation, median AND current range)
+# Each row has an individual trait value, and we need we need only a line per species 
+# (e.g. a single value of species' trait variation, median AND current range)
 
 
 
@@ -75,22 +75,6 @@ sla.now <- trait.cat %>%
 
 # this function for nobs < 20 has been calculated using the formula for a linear regression
 # where index = a + b x nobs; 0,5 = a + bx5; 1 = a + bx20, which equals index = 0.33 + (1/30 x nobs)
-
-
-# check all distributions of values for starters
-hist(sla.now$CurrentRangeSizeKm) # normal distribution with right tail
-hist(sla.now$RangeLogKm) # closer to zero but still not around zero
-hist(sla.now$CentredRangeLog) # bit skewed to the left but values are now centered around zero
-# makes sense to log and centre for current range size
-
-# check SLA standard deviation
-hist(sla.now$TraitValueSD) #normal distribution, not too far from zero
-hist(sla.now$LogTraitValueSD) #much closer to zero
-
-# check SLA values
-hist(sla.now$MedianTraitValue) #normal distribution, not too far from zero
-hist(sla.now$LogTraitMedianValue) #much closer to zero
-
 
 
 ## filter for Seed Mass, same process as above 
@@ -153,24 +137,7 @@ gap.seeds.new <- gap.seeds.new[names(seed.now)]
 
 # bind dataframes into one: 40 obs (28 + 12)
 seed.all <- bind_rows(seed.now, gap.seeds.new)
-str(seed.all) # 81 vars
-
-
-# check range size values
-hist(seed.all$CurrentRangeSizeKm) # close to zero with right tail
-hist(seed.all$RangeLogKm) # closer to zero but still not around zero
-hist(seed.all$CentredRangeLog) # skewed to the left but values are now centered around zero
-# makes sense to log and centre for current range size
-
-# check seed standard deviation
-hist(seed.all$TraitValueSD) #quite close to zero
-hist(seed.all$LogTraitValueSD) #much closer to zero
-
-# check seed values
-hist(seed.all$MedianTraitValue) #pretty close to zero except for an outlier
-hist(seed.all$LogTraitMedianValue) # perfectly centered around zero
-
-
+str(seed.all) 
 
 
   
@@ -188,23 +155,7 @@ height.now <- trait.cat %>%
   mutate(index = ifelse(nobs >=20, 1,
                       ifelse(nobs < 20, 0.33+(nobs/30), 0)))
 
-
 hei.means <- height.now %>% group_by(gf) %>% summarise(mean(MedianTraitValue))
-
-# check range size values
-hist(height.now$CurrentRangeSizeKm) # pretty far from zero
-hist(height.now$RangeLogKm) # closer to zero but still not around zero
-hist(height.now$CentredRangeLog) # though skewed to the left, values are now centered around zero
-# makes sense to log and centre for current range size
-
-# check height standard deviation
-hist(height.now$TraitValueSD) #quite close to zero
-hist(height.now$LogTraitValueSD) #much closer to zero
-
-# check height values
-hist(height.now$MedianTraitValue) #pretty close to zero 
-hist(height.now$LogTraitMedianValue) # normal distribution below zero
-
 
 
 
@@ -251,6 +202,7 @@ df_plot2 = cbind(newsladata2, fit2)
           legend.text=element_text(size = 20),
           legend.position = "top", legend.key = element_blank(),
           legend.background = element_blank()))
+
 
 
 ## SEED VARIATION MODEL ----
@@ -940,7 +892,7 @@ plot(conditional_effects(all.traits.val.cov.mod), points = TRUE)
 
 
 
-#### COVER CHANGE FIGURE ----
+## COVER CHANGE FIGURE ----
 
 # Slope variation per subsite
 cov.change.slopes <- read.csv("data/CoverChange_AllSpecies_NewModel_Slopes.csv")

@@ -1,7 +1,7 @@
 ## Trait-range manuscript
 ## Mariana Garcia
 ## March 2019
-## Script 5. Relationships between traits and species range changes
+## Script 5. Relationships between traits and species range changes and cover change
 
 
 ## LIBRARIES ----
@@ -52,23 +52,6 @@ sla.fut <- trait.cat %>%
 # this function for nobs < 30 has been calculated using the formulae for a linear regession
 # where index = a + b x nobs; 0,5 = a + bx5; 1 = a + bx20, which equals index = 0.33 + (1/30 x nobs)
 
-# check all distributions of values for starters
-hist(sla.fut$rel.median) # normal distrib kind of around zero but with long tail
-hist(sla.fut$rel.median.log) # closer to zero and kind of around it
-hist(sla.fut$cent.rel.median.log) # values are now centered around zero
-
-hist(sla.fut$abs.median) # normal distrib kind of around zero but with long tail
-hist(sla.fut$abs.median.log) # two tails at both sides of zero
-hist(sla.fut$cent.abs.median.log) # two tails at both sides of zero
-
-# check SLA standard deviation
-hist(sla.fut$TraitValueSD) #normal distribution, not too far from zero
-hist(sla.fut$LogTraitValueSD) #much closer to zero
-
-# check SLA values
-hist(sla.fut$MedianTraitValue) #normal distribution, not too far from zero
-hist(sla.fut$LogTraitMedianValue) #much closer to zero
-
 
 
 ## Plant height
@@ -84,23 +67,6 @@ hei.fut <- trait.cat %>%
   ungroup() %>% 
   mutate(index = ifelse(nobs >=20, 1,
                       ifelse(nobs < 20, 0.33+(nobs/30), 0)))
-
-# check all distributions of values for starters
-hist(hei.fut$rel.median) # normal distrib kind of around zero but with long tail
-hist(hei.fut$rel.median.log) # closer to zero but still not around zero
-hist(hei.fut$cent.rel.median.log) # values are now centered around zero
-
-hist(hei.fut$abs.median) # normal distrib kind of around zero but with long tail
-hist(hei.fut$abs.median.log) # closer to zero but still not around zero
-hist(hei.fut$cent.abs.median.log) # values are now centered around zero
-
-# check Height standard deviation
-hist(hei.fut$TraitValueSD) #normal distribution, not too far from zero
-hist(hei.fut$LogTraitValueSD) #much closer to zero
-
-# check Height values
-hist(hei.fut$MedianTraitValue) #normal distribution, not too far from zero
-hist(hei.fut$LogTraitMedianValue) #much closer to zero
 
 
 
@@ -924,6 +890,7 @@ summary(hei.val.abs75.mod) # positive ns
                             nrow = 2, ncol = 3, font.label = list(size = 30)))
 ggplot2::ggsave(abs.all.panel, filename = "figures/Figure_5.png", 
                 width = 60, height = 60, units = "cm", dpi = 500)
+
 
 
 ## FULL MODEL VALUES/ABSOLUTE ----
@@ -1863,7 +1830,7 @@ conditional_effects(rel.fam.mod)
                             labels = c("(a)", "(b)", "(c)", "(d)"),
                             font.label = list(size = 30)))
 
-ggplot2::ggsave(backtrans.panel, filename = "scripts/users/mgarciacriado/traits_vs_ranges/figures/2022_FigS4_Panel.png", 
+ggplot2::ggsave(backtrans.panel, filename = "figures/Figure_S4.png", 
                 width = 50, height = 50, units = "cm")
 
 

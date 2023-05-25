@@ -20,6 +20,8 @@ p_summarize <- function(model) {
     as_tibble(rownames = "parameter")
 }
 
+
+
 ## SCRIPTS 3&4 MODEL TABLE ----
 
 ## Add model objects to list
@@ -88,7 +90,7 @@ stargazer(mod.table.final34.4, type = "html", summary = FALSE)
 
 
 
-#### SCRIPT 5, PART 1 ----
+## SCRIPT 5, PART 1 ----
 models.list51 <- list(
   sla.abs25.mod, sla.medabs.mod, sla.abs75.mod,
   hei.abs25.mod, hei.medabs.mod, hei.abs75.mod,
@@ -171,7 +173,7 @@ stargazer(mod.table.final51.4, type = "html", summary = FALSE)
 
 
 
-##### SCRIPT 5 - PART 2 ----
+## SCRIPT 5 - PART 2 ----
 models.list52 <- list(hei.val.rel25.mod, hei.val.relmed.mod, hei.val.rel75.mod,
                     all.traits.val.rel.mod, all.traits.val.rel.mod4,
                     
@@ -251,9 +253,7 @@ stargazer(mod.table.final52.4, type = "html", summary = FALSE)
 
 
 
-
-
-##### SCRIPTS 5, 6 & 7 ----
+## SCRIPTS 5, 6 & 7 ----
 
 models.list567 <- list(
 sla.val.rel.gain.mod, sla.val.rel.loss.mod,

@@ -101,7 +101,7 @@ gap.genus.vector <- unique(hei.gap.gen$Genus) # 12 genera
 ## SEED GAP-FILLING ----
 
 # this is the file with trait data prior to merging
-load("data/try5_clean5.RData")
+load("data/try5_clean5.RData") # [this file is not available in the repo as it contains raw data]
 
 ## creating this intermediate object just to inspect the gap-filling
 gaps000 <- try5.clean5 %>% 
@@ -167,7 +167,6 @@ write.csv(gap.fill.seed, "data/2022_gapfilled_seed_data.csv")
 
 
 
-
 ## POLAR MAP ----
 
 # combine cleaned trait databases into one
@@ -186,7 +185,7 @@ dt <- transform_coord(coord.data, bind = TRUE)
 
 
 # plot map
-(tundra.map2 <- basemap(data = dt, limits = 32, land.col = "#c9c7c1") + 
+(tundra.map <- basemap(data = dt, limits = 32, land.col = "#c9c7c1") + 
     geom_point(data = dt, aes(x = lon.proj, y = lat.proj, colour = TraitShort), 
                alpha = 0.4, size = 12) + labs(title = "(a)") +
     scale_colour_manual(values = c("#800080", "#E57E00","#0a6933"), 
@@ -201,6 +200,8 @@ dt <- transform_coord(coord.data, bind = TRUE)
 
 
 ## BUBBLE PLOTS ----
+gap.fill.seed <- read.csv("data/2022_gapfilled_seed_data.csv")
+
 hei.sp2 <- hei.sp %>% mutate(SpeciesName = Plant_Height)
 sla.sp2 <- sla.sp %>% mutate(SpeciesName = SLA)
 

@@ -4,6 +4,11 @@
 ## Script 7. Comparison of climate change scenarios
 
 
+# Some input files for this script are not available in the repo given that they include raw data.
+# The script preparing the data is included below for transparency and reproducibility.
+# The full mastersheet (master_new_superfinal00.RData) is available below as input data for all analyses and figures in this script.
+
+
 ## LIBRARIES ----
 library(tidyverse)
 library(brms)
@@ -23,20 +28,24 @@ range.theme <- theme(legend.position = "none",
                      plot.margin = unit(c(1,1,1,1), units = , "cm"))
 
 
-## TRAIT DATA ----
+## We need to re-make our mastersheet to incorporate all 3 climatic scenarios
 
+
+## LOAD DATA ----
+
+# Trait data with categories
 load("data/2022_trait_cat.RData")
-#this is assigned to the object 'trait.cat' - 17921 obs of 75 vars
+#this is assigned to the object 'trait.cat' - 17921 obs 
 
-# For this we need to re-arrange our mastersheets
-load("data/2022_try5_clean5.RData")
+# Raw trait data
+load("data/2022_try5_clean5.RData") # [this file is not available as it contains raw data]
 name.vector.try5 <- unique(try5.clean5$sp)
 
 
 ## RANGE DATA ----
 
 # [this file is not available in the repo as it contains raw data]
-range.data2 <- read.csv("scripts/users/mgarciacriado/traits_vs_ranges/data/SRC_baseline_tabs_2017-04-26_fullrange.csv")
+range.data2 <- read.csv("data/SRC_baseline_tabs_2017-04-26_fullrange.csv")
 unique(range.data2$sp) #132 species
 
 # Convert species names with dot to spaces to match TRY
@@ -95,7 +104,7 @@ merge.df <- merge(try5.clean5, range.all2, by = "sp")
 ## Add decidiousness 
 
 # [this file is not available in the repo as it contains raw data]
-form <- read.csv("data/TRY_v3/Categorical_Traits_and_Site_Info/TRY_Categorical_Traits_Lookup_Table_2012_03_17_TestRelease.csv")
+form <- read.csv("data/TRY_Categorical_Traits_Lookup_Table_2012_03_17_TestRelease.csv")
 vector.xx <- unique(merge.df$sp)
 
 # filter for the relevant species in our list
@@ -176,14 +185,24 @@ berry.vector <- c("Vaccinium caespitosum", "Vaccinium myrtilloides", "Vaccinium 
 # Add in dispersal mode per species
 master.new.superfinal00 <- mutate(master.full, DispersalMode = ifelse(sp %in% berry.vector, "Berry", "Wind"))
 
-# This file can be loaded to start fitting the models below
-load("data/master_new_superfinal00.RData")
+# Keep relevant columns only
+master.new.superfinal00 <- master.new.superfinal00 %>% 
+  select(-c(X, layer_id, Loss, Stable0, Stable1, Gain, PercLoss, PercGain, SpeciesRangeChange, 
+            CurrentRangeSize, CurrentRangeSizeKm, FutureRangeSize.FullDisp, FutureRangeSize.FullDisp, FutureRangeSize.FullDisp.Km,
+            area, file.id, model, rcp, gcm, src_ras_file, scenario, RangeLog, RangeLogKm, FutureRangeSize.FullDisp.Km, 
+            AbsoluteRangeChangeKm, AbsoluteRangeChangeKmDivided, AbsoluteRangeChangeKmConstant, SpeciesRangeChangeDivided,
+            SpeciesRangeChangeConstant, abs.median, abs.median.log))
 
+save(master.new.superfinal00, file = "data/master_new_superfinal00.RData")
 
 
 
 
 ## SCENARIOS ----
+
+# This file can be loaded to start fitting the models below
+load("data/master_new_superfinal00.RData")
+
 unlim <- filter(master.new.superfinal00, filt == "unlimited_dipersal")
 lim.disp <- filter(master.new.superfinal00, filt == "max_dipersal")
 no.disp <- filter(master.new.superfinal00, filt == "no_dipersal")
@@ -397,7 +416,7 @@ unlim.seed.sp <- unlim %>%
 
 
 ## Additional step in here as we need to bring in the gap-filled data
-gap.seeds.fut <- read.csv("data/gapfilled_seed_data.csv")
+gap.seeds.fut <- read.csv("data/2022_gapfilled_seed_data.csv")
 
 # extract unique columns so they can be combined
 gap.unique <- gap.seeds.fut %>% dplyr::select(sp, GapMedian, GapSD)
@@ -624,14 +643,14 @@ df_seed_unlimvar = cbind(seed.unlimvar.data, fit.seed.unlimvar)
                           hei.var.unlim.plot, sla.unlimvar.plot, seed.unlimvar.plot,
                             labels = c("(a)", "(b)", "(c)", "(d)", "(e)", "(f)"), 
                             nrow = 2, ncol = 3, font.label = list(size = 30)))
-ggplot2::ggsave(unlim.panel, filename = "scripts/users/mgarciacriado/traits_vs_ranges/figures/Figure_S2.png", 
+ggplot2::ggsave(unlim.panel, filename = "figures/Figure_S2.png", 
                 width = 60, height = 60, dpi = 500, units = "cm")
 
 
 
 
 ## COMPARISON OF CLIMATIC SCENARIOS ----
-clim.scen <- range.data2
+clim.scen <- range.data2 # [this file is not available in the repo as it contains raw range data]
 
 # Filter for appropriate parameters and calculate median range change per climatic scenario and species
 clim.scen.fin <- clim.scen %>% filter(area == "full_area") %>% filter(biointer == "no") %>% 

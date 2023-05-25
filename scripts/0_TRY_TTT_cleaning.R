@@ -4,19 +4,11 @@
 # March 2020
 
 
-# NOTE! 
-# This first part must be done on a computer (not the server) because the TRY data file is too large to add to GitHub
-# At least on Anne's computer, must unzip the file every time, as it's too large (19 GB!) to leave unzipped. 
-# I had to do this in Terminal (unzip Filepath.text) on my Mac because it failed using the normal utility app
-# I saved the subset of data for just Mariana's species and traits, so can skip this first part and import that if desired 
-# (i.e. you don't have to load the whole TRY database unless you want to do a new extraction)
+# The input files for this script are not available in the repo given that they include raw TRY/TTT data.
+# This is a data prep script and is made available for reproducibility and transparency purposes. 
+# The final file produced by this script (mTTTT_clean.RData) will be used as input data on species traits 
+# in script #1 in order to produce the main mastersheet combining traits and ranges.
 
-# ABOUT THE DATA
-# See text file that came with the data. In particular observe:
-# 5. The "ObservationID" relates database entries (measurements of traits and covariates) on the same entity to observations (e.g. two traits measured on the same leaf). Different rows in the data table with the same ObservationID are directly related to each other.
-# 7. If plants have grown under experimental conditions this is reported as a covariate entry (DataID 327, Column StdValueStr), if known. The covariate is related to the trait entry via the ObservationID. Same for mature and juvenile plants (DataID 413), and for healthy and non-healthy plants (DataID 1961).
-# 8. The data may contain duplicates, e.g. if the same data have been contributed to TRY by different contributors. If we have identified an entry as duplicate you will find the ID of the original entry in the column OrigObsDataID.
-# 10. Geographic coordinates are standardized to longitude and latitude values in decimal format (Column: StdValue), DataID 59 & 60, respectively. [Note from Anne - coordinates are also in the SiteInfo file downloaded separately, at some point we should check these and make sure they're the same!]
 
 
 ## PACKAGES ----
@@ -31,15 +23,17 @@ library(ggplot2)
 
 
 ## IMPORT DATA ----
-TRYv5<-fread("/Users/hotstuff/8400.txt", header = T, sep = "\t", dec = ".", quote = "", data.table = T, verbose=TRUE)
+
+# [this file is not available in the repo as it contains raw data]
+TRYv5 <- fread("data/8400.txt", header = T, sep = "\t", dec = ".", quote = "", data.table = T, verbose=TRUE)
 head(TRYv5)
 
 allTRYnames <- unique(TRYv5$AccSpeciesName)
 
-# save(allTRYnames,file="scripts/users/abjorkman/DataPrep/TRAITS/TRY_v5/allTRYnames_v5.RData")
 
-# Add location info
-siteinfo <- read.csv(file="/Users/hotstuff/Documents/_SCIENCE/ShrubHub_holding_area/TRY_v5/TRY Site Info/TRY_5_Site_Climate_Soil_2019-03-25.txt", header = T, sep = "\t", dec = ".", stringsAsFactors=FALSE, strip.white=TRUE)
+# Add location info [this file is not available in the repo as it contains raw data]
+siteinfo <- read.csv(file = "data/TRY_5_Site_Climate_Soil_2019-03-25.txt", 
+                     header = T, sep = "\t", dec = ".", stringsAsFactors=FALSE, strip.white=TRUE)
 
 TRYv5$Lat <- siteinfo$LAT_site[match(TRYv5$ObservationID,siteinfo$observationId)]
 TRYv5$Lon <- siteinfo$LON_site[match(TRYv5$ObservationID,siteinfo$observationId)]
@@ -53,14 +47,14 @@ mTRY <- as.data.frame(TRYv5[TRYv5$AccSpeciesName %in% c(mnames),], stringsAsFact
 
 
 # SAVE this so you can just load this file and not the whole 19 GB TRY database if you want!
-
-# save(mTRY, file = "workspace/traits/TRYv5_Mariana_unclean.RData")
+# save(mTRY, file = "data/TRYv5_Mariana_unclean.RData")
 
 
 
 # START HERE IF JUST USING THE DATA SUBSET! ----
 
-load("workspace/traits/TRYv5_Mariana_unclean.RData") #object is called "mTRY"
+# [this file is not available in the repo as it contains raw data]
+load("data/TRYv5_Mariana_unclean.RData") #object is called "mTRY"
 
 ## Checks on duplicates here
 
@@ -71,7 +65,7 @@ alst <- mTRY %>% filter(LastName == "Rogers") %>%
 unique(alst$TraitName)
 
 # there are duplicates here
-write.csv(alst, file = "scripts/users/mgarciacriado/traits_vs_ranges/data/alastair_rogers_b4_try.csv")
+write.csv(alst, file = "data/alastair_rogers_b4_try.csv") # [this file is not available in the repo as it contains raw data]
 
 
 # Serge Sheremetev
@@ -79,7 +73,7 @@ serge <- mTRY %>% filter(LastName == "Sheremetev") %>% filter(OriglName == "SLA"
   filter(AccSpeciesName == "Vaccinium myrtillus")
 
 # same here
-write.csv(serge, file = "scripts/users/mgarciacriado/traits_vs_ranges/data/serge_sheremetev_b4_try.csv")
+write.csv(serge, file = "data/serge_sheremetev_b4_try.csv") # [this file is not available in the repo as it contains raw data]
 
 
 
@@ -95,7 +89,6 @@ TRYcorr[TRYcorr$Plant.Name.Index==FALSE,]
 # All names seem to be accepted PL names (so they should match with TTT below, which has already been checked with the PL)
 
 # Add Family & Genus data to dataframe (for cleaning)
-
 mTRY$Genus <- TRYcorr$Genus[match(mTRY$AccSpeciesName,TRYcorr$Taxon)]
 mTRY$Family <- TRYcorr$Family[match(mTRY$AccSpeciesName,TRYcorr$Taxon)]
 
@@ -123,7 +116,7 @@ mTRY[mTRY$DataID == 327,] #none
 
 # ADD TTT DATA ----
 
-load("workspace/traits/try_ttt.RData")
+load("data/try_ttt.RData") # [this file is not available in the repo as it contains raw data]
 
 # Let's filter species that I want only from TTT
 try.ttt2 <- as.data.frame(try.ttt[try.ttt$AccSpeciesName %in% c(mnames),])
@@ -133,7 +126,7 @@ unique(try.ttt2$AccSpeciesName)
 mTRY$DataContributor <- paste(mTRY$FirstName,mTRY$LastName, sep=" ")
 
 mTRY$TraitShort <- mTRY$TraitName
-mTRY$TraitShort[mTRY$TraitShort %in% c("Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): petiole excluded","Leaf area per leaf fresh mass (specific leaf area (SLA or 1/LMA) based on leaf fresh mass)","Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): petiole included","Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): undefined if petiole is in- or excluded")] <- "SLA"
+mTRY$TraitShort[mTRY$TraitShort %in% c("Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): petiole excluded", "Leaf area per leaf fresh mass (specific leaf area (SLA or 1/LMA) based on leaf fresh mass)","Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): petiole included","Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): undefined if petiole is in- or excluded")] <- "SLA"
 mTRY$TraitShort[mTRY$TraitShort %in% c("Plant height vegetative","Plant height generative")] <- "PlantHeight"
 mTRY$TraitShort[mTRY$TraitShort == "Seed dry mass"] <- "SeedMass"
 
@@ -163,11 +156,9 @@ summ.ttt <- count(ttt.test.summ, Dataset)
 
 # CLEAN COMBINED DATA ----
 
-# Adapted from TraitHub/scripts/TTT_cleaning_script.R and Anne's "Combine_TRY_ITEX_data_UPDATED.R" script
-
 nrow(mTTTT)
 
-# REMOVE NIWOT MEAN DATA (because individual values are added from TTT) and ALL NIWOT SLA DATA because it's sketchy
+# REMOVE NIWOT MEAN DATA (because individual values are added from TTT) and ALL NIWOT SLA DATA because of inconsistency
 mTTTT <- mTTTT[c(mTTTT$Dataset == "Niwot Alpine Plant Traits" | c(mTTTT$Dataset == "NiwotRidge" & mTTTT$TraitShort == "SLA"))==F, ]
 
 # REMOVE SEED MASS DATA from Salix arctica Rebecca Klady because units uncertain and Papaver from me because values seem off (units problem?)
@@ -277,7 +268,7 @@ nrow.start - nrow(mTTTT.clean) #number of observations removed (186)
 # SAVE CLEANED DATA
 mTTTT.clean <- mTTTT.clean[,1:13]
 
-save(mTTTT.clean, file = "scripts/users/mgarciacriado/traits_vs_ranges/data/mTTTT_clean.RData")
+save(mTTTT.clean, file = "data/mTTTT_clean.RData") # [this file is not available in the repo as it contains raw data]
 
 unique(mTTTT.clean$AccSpeciesName)
 
@@ -293,8 +284,6 @@ unmatched$NotRemoved <- factor(unmatched$NotRemoved, levels = c(1,0))
 
 # Histograms of kept vs. removed values per species and trait
 # NOTE: this can take a long time to run
-
-pdf("figures/Mariana_cleaning.pdf")
 
 d_ply(unmatched, .(TraitShort,AccSpeciesName), function (x){
   ggplot(data=x)+

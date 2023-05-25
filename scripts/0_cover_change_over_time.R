@@ -2,10 +2,11 @@
 ## Written by Anne, Stan model by Anne & Nadja, further edits by Mariana ##
 ## December 2020 ##
 
-# The Beta-Bernoulli models did not work well (too many plots with only 0's for the Bernoulli part?) 
-# so instead I went with a Poisson model where cover is between 0 and 100 (rounded up using "ceiling" 
-# so any amount <1 becomes 1). This is based on relative cover (not including bryophytes and lichens)
 
+# The input files for this script are not available in the repo given that they include raw ITEX data.
+# This is a data prep script and is made available for reproducibility and transparency purposes. 
+# The final files produced by this script (CoverChangeSpecies_QuantsCats_Final.csv, CoverChange_AllSpecies_NewModel_Slopes)
+# will be used as input data on species cover change over time in the following scripts.
 
 
 ## PACKAGES ----
@@ -16,7 +17,7 @@ library(R2jags)
 
 
 ## DATA IMPORT ----
-load("scripts/users/abjorkman/Bayesian_CWM/coverc_sub.RData")
+load("data/coverc_sub.RData") # [this file is not available in the repo as it contains raw data]
 
 # Exclude morphospecies and some sites and subsites that have only one plot
 cover.spp <- coverc.sub[!is.na(coverc.sub$COVER) & coverc.sub$Morphosp==0 & 
@@ -131,7 +132,6 @@ ggplot(cover.spp2)+
 
 #JAGS - Poisson - By PLOT -----
 
-
 jags.dat<-list(
   Nsppplot = length(unique(cover.spp2$PlotSpecies)),
   #
@@ -182,14 +182,13 @@ sigma ~ dunif(0,10)
 }
 
 
-","scripts/users/abjorkman/Cover_Change/cover_change_betabern_poisson.jags")
+")
 
 params <- c("alpha", "beta", "lambda", "Presi", "fit", "fit.new", "sigma")
 
 
 
 mout.jags <- jags(jags.dat, inits = NULL, params, 
-                  model.file = "scripts/users/abjorkman/Cover_Change/cover_change_betabern_poisson.jags", 
                   n.chains = 3, n.iter = 20000, n.burnin = 15000, n.thin = 2, DIC = FALSE, 
                   working.directory = NULL, progress.bar = "text") 
 
@@ -264,6 +263,7 @@ ggplot(cover.spp2[cover.spp2$SUBSITE=="NIWOT:MOIST MEADOW_SADDLE" & cover.spp2$N
   geom_smooth(aes(x=YEAR-2003, y = log(COVER2*100+1), colour = SemiUniquePLOT), se = F, method="lm")
 
 
+
 # JAGS output - derived parameters ----
 
 # Extract iterations
@@ -281,8 +281,6 @@ iter.beta <- as.data.frame(t(mout.jags$BUGSoutput$sims.list$beta), stringsAsFact
 iter.beta$PlotSpecies <- 1:length(iter.beta[,1])
 iter.beta$Name <- cover.spp2$Name[match(iter.beta$PlotSpecies,cover.spp2$PlotSpecies)]
 iter.beta$SUBSITE <- cover.spp2$SUBSITE[match(iter.beta$PlotSpecies,cover.spp2$PlotSpecies)]
-
-save(iter.beta, file = "scripts/users/mgarciacriado/traits_vs_ranges/data/iter_beta.RData")
 
 # If dplyr < 1.0, do this: convert to long format and add Site info
 iter.beta.long <- iter.beta %>% pivot_longer(cols = starts_with("V"), names_to = "iterations", values_to = "beta")
@@ -328,8 +326,6 @@ mean.beta.sp <- mean.beta.site %>%
   group_by(Name) %>% summarise(MeanSpecies = mean(MeanSite), MedianSpecies = median(MedianSite))
 
 
-
-# Anne's code continues here
 mean.alpha[1:10,1:10]
 mean.beta[1:10,1:10]
 
@@ -349,9 +345,7 @@ ggplot(cover.spp2[cover.spp2$Name=="Arctostaphylos uva-ursi",])+
   facet_wrap(~SUBSITE, scales = "free")
 
 # Save output
-
-write.csv(quant.beta, file = "CoverChange_MarianaSpp_bySubsite.csv")
-write.csv(quant.beta, file = "scripts/users/mgarciacriado/traits_vs_ranges/data/CoverChange_AllSpecies.csv")
+write.csv(quant.beta, file = "data/CoverChange_AllSpecies_NewModel_Slopes.csv")
 
 
 
@@ -372,12 +366,3 @@ all.cover.quan.cat <- all.beta %>% mutate(CoverCategory = case_when(LowerQuantil
 
 # Save this file
 write.csv(all.cover.quan.cat, "data/CoverChangeSpecies_QuantsCats_Final.csv")
-
-
-
-
-
-
-
-
-

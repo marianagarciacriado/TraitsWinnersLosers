@@ -228,6 +228,8 @@ val.win6 <- pairwise.perm.manova(val_c, fg.abc$category.abs, test = c("Pillai", 
 
 
 #### Figure 6 (panel)
+
+# coefs.val.plot and coefs.var.plot need to be loaded in script#3
 (pca.panel.cow.full <- plot_grid(values.pca.plot.points, coefs.val.plot, pca.var.plot, 
                                  coefs.var.plot,
                             ncol=2, nrow=2, align="h", label_size = 26, 

@@ -4,11 +4,17 @@
 ## Script 4. Winners vs losers (range variability)
 
 
+# The input files for this script are not available in the repo given that they include raw data.
+# The summarised data is provided below as range_quan.csv in the repo and can be loaded to create the figures
+# and models of this script.
+
+
 ## LIBRARIES ----
 library(tidyverse)
 library(ggpubr)
 library(brms)
 library(stargazer)
+
 
 
 ## THEME ----
@@ -24,10 +30,11 @@ range.theme2 <- theme(legend.position = "none",
                      plot.margin = unit(c(1,1,1,1), units = , "cm"))
 
 
+
 ## DATA LOADING & PREP ----
 
 # Import database [file not available as it contains raw data]
-range.quan <- read.csv("scripts/users/mgarciacriado/traits_vs_ranges/data/2022_range_full.csv")
+range.quan <- read.csv("data/2022_range_full.csv")
 
 # Re-calculate the quantiles with the raw data 
 range.quan2 <- range.quan %>%
@@ -70,6 +77,7 @@ write.csv(range.quan4, file = "data/range_quan.csv")
 
 
 ## FIGURES PER GROUP ----
+range.quan4 <- read.csv("data/range_quan.csv")
 
 # extract figures per category
 stats.cat <- range.quan4 %>% group_by(category.abs) %>% summarise(n = n())
@@ -198,7 +206,7 @@ nochange.abs <- range.quan4 %>% filter(category.abs == "No change")
                             labels = c("(a)", "(b)"), common.legend = TRUE, align = "v",
                           nrow = 2, ncol = 1, font.label = list(size = 26)))
 
-ggsave(range.panel, filename = "scripts/users/mgarciacriado/traits_vs_ranges/figures/range_panel2.png", 
+ggsave(range.panel, filename = "figures/Figure_4.png", 
        width = 60, height = 60, units = "cm")
 
 
@@ -207,18 +215,20 @@ ggsave(range.panel, filename = "scripts/users/mgarciacriado/traits_vs_ranges/fig
 ## ABSOLUTE RANGE CHANGE VS RELATIVE RANGE CHANGE ----
 
 # Positive relationship between relative and absolute range changes
-(abs.rel.plot <- ggplot(range.quan2, aes(x = rel.median, y = abs.median)) +
+(abs.rel.plot <- ggplot(range.quan4, aes(x = rel.median, y = abs.median)) +
     geom_point(size = 4, colour = "blue") + 
     xlab("\nRelative range change (%)") + ylab("Absolute range change (sq km)\n") + 
     geom_smooth(method = 'lm', formula = y~x) + range.theme2)
 
 ## Fit model
-ranges.brm <- brm(abs.median ~ rel.median, data = range.quan2, iter = 2000, chains = 4, warmup = 400, 
+ranges.brm <- brm(abs.median ~ rel.median, data = range.quan4, iter = 2000, chains = 4, warmup = 400, 
                   file = "models/rel_vs_abs_ranges")
 summary(ranges.brm) # significant positive relationship
 
 
 ## FUTURE RANGE VS CURRENT RANGE ----
+
+# [file range.quan2 is not available in the repo as it includes raw data]
 (fut.cur.plot <- ggplot(range.quan2, aes(x = CurrentRangeSizeKm, y = future.med)) +
    geom_point(size = 4, colour = "turquoise") + 
    xlab("\nCurrent range size (sq km)") + ylab("Future range size (sq km)\n") + 
@@ -229,5 +239,5 @@ summary(ranges.brm) # significant positive relationship
 
 # Fit model
 fut.cur.brm <- brm(future.med ~ CurrentRangeSize, data = range.quan2, iter = 2000, chains = 4, warmup = 400,
-                   file = "scripts/users/mgarciacriado/traits_vs_ranges/models/final_mods/fut_vs_cur_ranges")
+                   file = "models/fut_vs_cur_ranges")
 summary(fut.cur.brm) # significant positive relationship
