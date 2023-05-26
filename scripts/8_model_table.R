@@ -81,7 +81,7 @@ mod.table.final34.3 <- mod.table.final34.2[, c(1, 7, 2, 3, 4, 5, 6)]
 mod.table.final34.4 <- mod.table.final34.3 %>% mutate_if(is.numeric, round, digits = 3)
 
 # Save in csv
-write.csv(mod.table.final34.4, "models/table_s2/2022_table_s2_34.csv")
+write.csv(mod.table.final34.4, "models/table_s2/2022_sd1_34.csv")
 
 # Convert to table
 stargazer(mod.table.final34.4, type = "html", summary = FALSE)
@@ -161,7 +161,7 @@ mod.table.final51.3 <- mod.table.final51.2[, c(1, 7, 2, 3, 4, 5, 6)]
 mod.table.final51.4 <- mod.table.final51.3 %>% mutate_if(is.numeric, round, digits = 3)
 
 # Save in csv
-write.csv(mod.table.final51.4, "models/table_s2/2022_table_s2_51.csv")
+write.csv(mod.table.final51.4, "models/table_s2/2022_sd1_51.csv")
 
 # Convert to table
 stargazer(mod.table.final51.4, type = "html", summary = FALSE)
@@ -245,7 +245,7 @@ mod.table.final52.3 <- mod.table.final52.2[, c(1, 7, 2, 3, 4, 5, 6)]
 mod.table.final52.4 <- mod.table.final52.3 %>% mutate_if(is.numeric, round, digits = 3)
 
 # Save in csv
-write.csv(mod.table.final52.4, "models/table_s2/2022_table_s2_52.csv")
+write.csv(mod.table.final52.4, "models/table_s2/2022_sd1_52.csv")
 
 # Convert to table
 stargazer(mod.table.final52.4, type = "html", summary = FALSE)
@@ -361,7 +361,7 @@ mod.table.final567.3 <- mod.table.final567.2[, c(1, 7, 2, 3, 4, 5, 6)]
 mod.table.final567.4 <- mod.table.final567.3 %>% mutate_if(is.numeric, round, digits = 3)
 
 # Save in csv
-write.csv(mod.table.final567.4, "models/table_s2/2022_table_s2_567.csv")
+write.csv(mod.table.final567.4, "models/table_s2/2022_sd1_567.csv")
 
 # Convert to table
 stargazer(mod.table.final567.4, type = "html", summary = FALSE)
